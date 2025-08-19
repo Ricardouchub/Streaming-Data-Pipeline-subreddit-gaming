@@ -1,19 +1,19 @@
 # Data Streaming Pipeline y Análisis de Sentimiento para r/gaming en AWS
 
-Este proyecto implementa un pipeline de datos en tiempo real que recolecta comentarios del subreddit `r/gaming`, realiza análisis de sentimiento sobre entidades específicas (juegos, consolas y empresas), y almacena los resultados en una base de datos en la nube de AWS. Los datos son visualizados a través de un dashboard interactivo que se ejecuta de manera local.
+Este proyecto implementa un pipeline de datos en tiempo real que recolecta comentarios del subreddit `r/gaming`, realiza análisis de sentimiento sobre entidades específicas como algunos juegos, consolas y empresas, y almacena los resultados en una base de datos en la nube de AWS. Los datos son visualizados a través de un dashboard interactivo que se ejecuta de manera local.
 
-![Diagrama de Arquitectura del Proyecto](URL_DE_TU_IMAGEN_DE_ARQUITECTURA_AQUI)
+<img width="610" height="512" alt="image" src="https://github.com/user-attachments/assets/da195a9f-a43c-44c3-a584-8c30c65d52fe" />
+
 
 ---
 
 ## Características Principales
 
--   **Recolección en Tiempo Real:** Un script de Python se ejecuta 24/7 en un servidor de AWS EC2, escuchando el flujo de nuevos comentarios de `r/gaming` a través de la API de Reddit.
--   **Procesamiento y Análisis de Sentimiento:** Utiliza Procesamiento de Lenguaje Natural (NLP) con la librería VADER para detectar palabras clave predefinidas y clasificar el sentimiento de cada comentario relevante como positivo, negativo o neutral.
--   **Almacenamiento Persistente y Seguro:** Los datos procesados se guardan en una base de datos PostgreSQL gestionada por Amazon RDS, la cual reside en una red privada y segura.
+-   **Recolección a Tiempo Real:** Un script de Python se ejecuta 24/7 en un servidor de AWS **EC2**, escuchando el flujo de nuevos comentarios del subreddit `r/gaming` a través de la API de Reddit.
+-   **Procesamiento y Análisis de Sentimiento:** Utiliza Procesamiento de Lenguaje Natural (NLP) con la librería **VADER** para detectar palabras clave predefinidas y clasificar el sentimiento de cada comentario relevante como positivo, negativo o neutral.
+-   **Almacenamiento:** Los datos procesados se guardan en una base de datos PostgreSQL gestionada por **Amazon RDS**, la cual reside en una red privada y segura.
 -   **Visualización Interactiva Local:** Un dashboard construido con Plotly Dash se conecta de forma segura a la base de datos en la nube a través de un túnel SSH, permitiendo la exploración y visualización de los datos sin exponer la base de datos a internet.
--   **Arquitectura Robusta en la Nube:** Todos los componentes en la nube operan dentro de una Amazon VPC, asegurando que la comunicación entre el recolector y la base de datos sea privada y segura.
-
+  
 ---
 
 ## Arquitectura
