@@ -81,7 +81,7 @@ sidebar = dbc.Collapse(
             html.H5('Filtros', className='fw-bold mb-3 text-primary'),
             dbc.Form([
                 dbc.Label('Rango de Fechas', className='fw-semibold small text-white'),
-                dcc.DatePickerRange(id='date-picker-range', min_date_allowed=date(2024, 1, 1), max_date_allowed=date.today() + timedelta(days=1), start_date=date.today() - timedelta(days=7), end_date=date.today(), display_format='YYYY-MM-DD', className='mb-3 w-100'),
+                dcc.DatePickerRange(id='date-picker-range', min_date_allowed=date(2024, 1, 1), max_date_allowed=date.today() + timedelta(days=1), start_date=date.today() - timedelta(days=1), end_date=date.today(), display_format='YYYY-MM-DD', className='mb-3 w-100'),
                 dbc.Label('Juego', className='fw-semibold small text-white'),
                 dcc.Dropdown(id='game-filter', options=[{'label': 'Todos', 'value': 'All'}] + [{'label': g, 'value': g} for g in KEYWORDS['Juego']], value='All', className='mb-3'),
                 dbc.Label('Consola', className='fw-semibold small text-white'),
