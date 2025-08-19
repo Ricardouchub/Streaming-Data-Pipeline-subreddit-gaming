@@ -1,4 +1,4 @@
-# Pipeline de Datos en Tiempo Real y Análisis de Sentimiento para r/gaming en AWS
+# Data Streaming Pipeline y Análisis de Sentimiento para r/gaming en AWS
 
 Este proyecto implementa un pipeline de datos en tiempo real que recolecta comentarios del subreddit `r/gaming`, realiza análisis de sentimiento sobre entidades específicas (juegos, consolas y empresas), y almacena los resultados en una base de datos en la nube de AWS. Los datos son visualizados a través de un dashboard interactivo que se ejecuta de manera local.
 
