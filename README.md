@@ -12,7 +12,7 @@ Este proyecto implementa un pipeline de datos en tiempo real que recolecta comen
 
 -   **Recolección a Tiempo Real:** Un script de Python se ejecuta 24/7 en un servidor de AWS **EC2**, escuchando el flujo de nuevos comentarios del subreddit `r/gaming` a través de la API de Reddit.
 -   **Procesamiento y Análisis de Sentimiento:** Utiliza Procesamiento de Lenguaje Natural (NLP) con la librería **VADER** para detectar palabras clave predefinidas y clasificar el sentimiento de cada comentario relevante como positivo, negativo o neutral.
--   **Almacenamiento:** Los datos procesados se guardan en una base de datos PostgreSQL gestionada por **Amazon RDS**, la cual reside en una red privada y segura.
+-   **Almacenamiento Seguro:** Los datos procesados se guardan en una base de datos PostgreSQL gestionada por **Amazon RDS**, la cual reside en una red privada y segura.
 -   **Visualización Interactiva Local:** Un dashboard construido con Plotly Dash se conecta de forma segura a la base de datos en la nube a través de un túnel SSH, permitiendo la exploración y visualización de los datos sin exponer la base de datos a internet.
   
 ---
