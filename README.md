@@ -2,6 +2,7 @@
 
 Este proyecto implementa un pipeline de datos en tiempo real que recolecta comentarios del subreddit `r/gaming`, realiza análisis de sentimiento sobre entidades específicas como algunos juegos, consolas y empresas, y almacena los resultados en una base de datos en la nube de AWS. Los datos son visualizados a través de un dashboard interactivo que se ejecuta de manera local.
 
+
 <img width="610" height="512" alt="image" src="https://github.com/user-attachments/assets/da195a9f-a43c-44c3-a584-8c30c65d52fe" />
 
 
