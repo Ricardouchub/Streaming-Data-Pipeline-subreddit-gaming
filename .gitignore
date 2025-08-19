@@ -181,4 +181,4 @@ cython_debug/
 .cursorindexingignore
 
 # Key Pass
-.pem
+reddit-key.pem
