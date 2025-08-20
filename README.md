@@ -21,17 +21,17 @@ Este proyecto implementa un pipeline de datos en tiempo real que recolecta comen
 
 El pipeline sigue un flujo de datos claro desde la recolección hasta la visualización:
 
-1.  **Servicio de Recolección:** Un script de Python (`reddit_producer.py`) se ejecuta como un servicio `systemd` permanente en una instancia **Amazon EC2**.
+1.  **Servicio de Recolección:** Un script de Python `reddit_producer.py` se ejecuta como un servicio `systemd` permanente en **Amazon EC2**.
 2.  **Extracción:** El servicio se conecta a la API de Reddit usando la librería `praw` y monitorea en tiempo real los nuevos comentarios publicados en el subreddit `r/gaming`.
 3.  **Transformación y Enriquecimiento:**
-    -   Cada comentario es analizado para buscar menciones de entidades clave (juegos, consolas, empresas).
+    -   Cada comentario es analizado para buscar menciones de entidades clave  de algunosjuegos, consolas, empresas.
     -   Si se encuentra una mención, la librería `vaderSentiment` analiza el texto completo del comentario para calcular una puntuación y una etiqueta de sentimiento (positivo, negativo, neutral).
 4.  **Carga:**
-    -   El script se conecta a la base de datos **Amazon RDS (PostgreSQL)**. Esta conexión es segura ya que tanto EC2 como RDS están en la misma red privada (VPC).
+    -   El script se conecta a la base de datos **Amazon RDS (PostgreSQL)**. 
     -   Inserta una nueva fila en la tabla `game_mentions` con los datos enriquecidos: timestamp, entidad mencionada, tipo de entidad, sentimiento y un enlace al comentario original.
-5.  **Visualización Segura:**
+5.  **Visualización:**
     -   En la máquina local del usuario, un **Túnel SSH** se establece con el servidor EC2.
-    -   La aplicación de dashboard (`dashboard_app.py`), construida con **Plotly Dash**, se conecta a la base de datos a través de este túnel, apuntando a `localhost`. Esto permite que el dashboard lea los datos de forma segura sin que la base de datos esté expuesta públicamente.
+    -   La aplicación de dashboard _app.py, construida con **Plotly Dash**, se conecta a la base de datos a través de este túnel, apuntando a `localhost`. Esto permite que el dashboard lea los datos de forma segura sin que la base de datos esté expuesta públicamente.
 
 ---
 
@@ -40,23 +40,23 @@ El pipeline sigue un flujo de datos claro desde la recolección hasta la visuali
 -   **Amazon EC2:** Servidor virtual en la nube que aloja y ejecuta el script de recolección de datos 24/7.
 -   **Amazon RDS (PostgreSQL):** Base de datos relacional gestionada que provee almacenamiento persistente y escalable.
 -   **Amazon VPC:** Red virtual privada que aísla los recursos de AWS, garantizando una comunicación interna segura.
--   **`systemd`:** Gestor de servicios de Linux utilizado para asegurar que el script de recolección se ejecute de forma permanente y se reinicie automáticamente en caso de fallo.
+-   **`systemd`:** Gestor utilizado para asegurar que el script de recolección se ejecute de forma permanente y se reinicie automáticamente en caso de fallo.
 -   **Python 3:** Lenguaje principal para todo el proyecto.
     -   **Librerías del Colector:** `praw`, `psycopg2-binary`, `vaderSentiment`.
     -   **Librerías del Dashboard:** `dash`, `dash-bootstrap-components`, `plotly`, `pandas`, `SQLAlchemy`, `python-dotenv`.
--   **DBeaver:** Cliente de base de datos utilizado para la gestión y verificación de datos a través del túnel SSH.
+-   **DBeaver:** Cliente de base de datos.
 
 ---
 
 ## Estructura del Repositorio
 
 
-* EC2
+* /EC2/
   * `reddit_producer.py`: El script principal que se ejecuta en la instancia EC2.
   * `setup_database.py`: Script de utilidad para crear y configurar el esquema de la base de datos.
   * `requirements-producer.txt`: Dependencias para el script recolector en EC2.
 
-* main
+* /main/
   * `app.py`: La aplicación de Plotly Dash que se ejecuta localmente.
   * `requirements-dashboard.txt`: Dependencias para ejecutar el dashboard localmente.
   * `.env.example`: Plantilla para el archivo de configuración local del dashboard.
