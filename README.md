@@ -52,14 +52,14 @@ El pipeline sigue un flujo de datos claro desde la recolección hasta la visuali
 
 
 * EC2
-  * reddit_producer.py: El script principal que se ejecuta en la instancia EC2.
-  * setup_database.py: Script de utilidad para crear y configurar el esquema de la base de datos.
-  * requirements-producer.txt: Dependencias para el script recolector en EC2.
+  * `reddit_producer.py`: El script principal que se ejecuta en la instancia EC2.
+  * `setup_database.py`: Script de utilidad para crear y configurar el esquema de la base de datos.
+  * `requirements-producer.txt`: Dependencias para el script recolector en EC2.
 
 * main
-  * app.py: La aplicación de Plotly Dash que se ejecuta localmente.
-  * requirements-dashboard.txt: Dependencias para ejecutar el dashboard localmente.
-  * .env.example: Plantilla para el archivo de configuración local del dashboard.
+  * `app.py`: La aplicación de Plotly Dash que se ejecuta localmente.
+  * `requirements-dashboard.txt`: Dependencias para ejecutar el dashboard localmente.
+  * `.env.example`: Plantilla para el archivo de configuración local del dashboard.
 
 ---
 
