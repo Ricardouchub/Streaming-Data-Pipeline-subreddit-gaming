@@ -30,8 +30,8 @@ El pipeline sigue un flujo de datos claro desde la recolección hasta la visuali
     -   El script se conecta a la base de datos **Amazon RDS (PostgreSQL)**. 
     -   Inserta una nueva fila en la tabla `game_mentions` con los datos enriquecidos: timestamp, entidad mencionada, tipo de entidad, sentimiento y un enlace al comentario original.
 5.  **Visualización:**
-    -   En la máquina local del usuario, un **Túnel SSH** se establece con el servidor EC2.
-    -   La aplicación de dashboard _app.py, construida con **Plotly Dash**, se conecta a la base de datos a través de este túnel, apuntando a `localhost`. Esto permite que el dashboard lea los datos de forma segura sin que la base de datos esté expuesta públicamente.
+    -   En la máquina local del usuario, un Túnel SSH se establece con el servidor **EC2**.
+    -   La aplicación de dashboard app.py, se conecta a la base de datos a través de este túnel, apuntando a `localhost`. 
 
 ---
 
@@ -51,12 +51,12 @@ El pipeline sigue un flujo de datos claro desde la recolección hasta la visuali
 ## Estructura del Repositorio
 
 
-* /EC2/
+* **/EC2/**
   * `reddit_producer.py`: El script principal que se ejecuta en la instancia EC2.
   * `setup_database.py`: Script de utilidad para crear y configurar el esquema de la base de datos.
   * `requirements-producer.txt`: Dependencias para el script recolector en EC2.
 
-* /main/
+* **/main/**
   * `app.py`: La aplicación de Plotly Dash que se ejecuta localmente.
   * `requirements-dashboard.txt`: Dependencias para ejecutar el dashboard localmente.
   * `.env.example`: Plantilla para el archivo de configuración local del dashboard.
