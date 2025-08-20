@@ -41,7 +41,6 @@ El pipeline sigue un flujo de datos claro desde la recolección hasta la visuali
 -   **Amazon EC2:** Servidor virtual en la nube que aloja y ejecuta el script de recolección de datos 24/7.
 -   **Amazon RDS (PostgreSQL):** Base de datos relacional gestionada que provee almacenamiento persistente y escalable.
 -   **Amazon VPC:** Red virtual privada que aísla los recursos de AWS, garantizando una comunicación interna segura.
--   **`systemd`:** Gestor utilizado para asegurar que el script de recolección se ejecute de forma permanente y se reinicie automáticamente en caso de fallo.
 -   **Python 3:** Lenguaje principal para todo el proyecto.
     -   **Librerías del Colector:** `praw`, `psycopg2-binary`, `vaderSentiment`.
     -   **Librerías del Dashboard:** `dash`, `dash-bootstrap-components`, `plotly`, `pandas`, `SQLAlchemy`, `python-dotenv`.
