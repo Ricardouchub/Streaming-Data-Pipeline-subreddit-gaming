@@ -51,13 +51,15 @@ El pipeline sigue un flujo de datos claro desde la recolección hasta la visuali
 ## Estructura del Repositorio
 
 
+* EC2
+  * reddit_producer.py: El script principal que se ejecuta en la instancia EC2.
+  * setup_database.py: Script de utilidad para crear y configurar el esquema de la base de datos.
+  * requirements-producer.txt: Dependencias para el script recolector en EC2.
 
--   **`reddit_producer.py`**: El script principal que se ejecuta en la instancia EC2.
--   **`dashboard_app.py`**: La aplicación de Plotly Dash que se ejecuta localmente.
--   **`initialize_database.py`**: Script de utilidad para crear y configurar el esquema de la base de datos.
--   **`requirements-producer.txt`**: Dependencias para el script recolector en EC2.
--   **`requirements-dashboard.txt`**: Dependencias para ejecutar el dashboard localmente.
--   **`.env.example`**: Plantilla para el archivo de configuración local del dashboard.
+* main
+  * app.py: La aplicación de Plotly Dash que se ejecuta localmente.
+  * requirements-dashboard.txt: Dependencias para ejecutar el dashboard localmente.
+  * .env.example: Plantilla para el archivo de configuración local del dashboard.
 
 ---
 
@@ -71,19 +73,19 @@ El pipeline sigue un flujo de datos claro desde la recolección hasta la visuali
     -   Acceso **PostgreSQL (puerto 5432)** a la instancia RDS desde el grupo de seguridad de la instancia EC2.
 
 #### 2. Despliegue del Colector (en la instancia EC2)
-1.  Clonar el repositorio en la instancia EC2.
-2.  Crear un entorno virtual de Python e instalar las dependencias: `pip install -r requirements-producer.txt`.
-3.  Configurar las credenciales en los scripts (o usar variables de entorno).
-4.  Ejecutar `python initialize_database.py` para crear la tabla.
-5.  Crear el archivo de servicio `reddit_producer.service` en `/etc/systemd/system/`.
-6.  Activar e iniciar el servicio: `sudo systemctl daemon-reload`, `sudo systemctl start reddit_producer`, `sudo systemctl enable reddit_producer`.
+1. Clonar el repositorio en la instancia EC2.
+2. Crear un entorno virtual de Python e instalar las dependencias: pip install -r requirements-producer.txt.
+3. Configurar las credenciales en los scripts `setup_database.py` y `reddit_producer.py`.
+4. Ejecutar python setup_database.py para crear y configurar la tabla en la base de datos.
+5, Crear el archivo de servicio reddit_producer.service en /etc/systemd/system/.
+6. Activar e iniciar el servicio: sudo systemctl daemon-reload, sudo systemctl start reddit_producer, sudo systemctl enable reddit_producer.
 
 #### 3. Ejecución del Dashboard (en tu PC local)
 1.  Clonar el repositorio en tu PC.
 2.  Instalar las dependencias: `pip install -r requirements-dashboard.txt`.
 3.  Crear un archivo `.env` a partir de `.env.example` y rellenarlo con tus credenciales.
 4.  En una terminal, iniciar el **Túnel SSH** a tu instancia EC2.
-5.  En otra terminal, ejecutar la aplicación del dashboard: `python dashboard_app.py`.
+5.  En otra terminal, ejecutar la aplicación del dashboard: `python app.py`.
 
 ---
 
