@@ -98,8 +98,6 @@ El resultado final es un pipeline de datos completamente funcional que alimenta 
 ### Vista de la Base de Datos en DBeaver
 <img width="1554" height="972" alt="image" src="https://github.com/user-attachments/assets/7e23508f-3572-48ea-90b9-3b909ac2de8c" />
 
-### Logs del Servicio en EC2 mostrando recolección en tiempo real
-![Logs del Servicio en EC2](URL_DE_TU_IMAGEN_DE_LOS_LOGS_AQUI)
 
 ---
 
