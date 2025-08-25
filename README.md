@@ -93,7 +93,8 @@ El pipeline sigue un flujo de datos claro desde la recolección hasta la visuali
 El resultado final es un pipeline de datos completamente funcional que alimenta un dashboard interactivo, permitiendo el análisis de la opinión pública en la comunidad de gaming.
 
 ### Vista del Dashboard 
-<img width="2554" height="1221" alt="image" src="https://github.com/user-attachments/assets/3588e50e-2cf1-4ec5-a3c8-9b4bc3e926fd" />
+<img width="2558" height="1233" alt="image" src="https://github.com/user-attachments/assets/ea7b09f4-2a9b-40e4-9539-3bf9ddb43266" />
+
 
 
 ### Vista de la Base de Datos en DBeaver
