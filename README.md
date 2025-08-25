@@ -13,19 +13,18 @@
 
   <!-- AWS Infra -->
   <img src="https://img.shields.io/badge/Amazon_EC2-Servidor_24/7-FF9900?style=flat-square&logo=amazonec2&logoColor=white" alt="Amazon EC2"/>
-  <img src="https://img.shields.io/badge/Amazon_RDS-PostgreSQL-527FFF?style=flat-square&logo=amazonrds&logoColor=white" alt="Amazon RDS (PostgreSQL)"/>
-  <img src="https://img.shields.io/badge/Amazon_VPC-Red_Privada-232F3E?style=flat-square&logo=amazonaws&logoColor=white" alt="Amazon VPC"/>
+  <img src="https://img.shields.io/badge/Amazon_RDS-PostgreSQL-FF9900?style=flat-square&logo=amazonrds&logoColor=white" alt="Amazon RDS (PostgreSQL)"/>
+  <img src="https://img.shields.io/badge/Amazon_VPC-Red_Privada-FF9900?style=flat-square&logo=amazonaws&logoColor=white" alt="Amazon VPC"/>
 
   <!-- Herramientas -->
   <img src="https://img.shields.io/badge/DBeaver-DB_Client-372923?style=flat-square&logo=database&logoColor=white" alt="DBeaver"/>
-  <img src="https://img.shields.io/badge/Plotly-Visualización_Interactiva-3F4F75?style=flat-square&logo=plotly&logoColor=white" alt="Plotly"/>
+  <img src="https://img.shields.io/badge/Plotly-Visualización-3F4F75?style=flat-square&logo=plotly&logoColor=white" alt="Plotly"/>
 </p>
 
 
 Este proyecto implementa un pipeline de datos en tiempo real que recolecta comentarios del subreddit `r/gaming`, realiza análisis de sentimiento sobre entidades específicas como algunos juegos, consolas y empresas, y almacena los resultados en una base de datos en la nube de AWS. Los datos son visualizados a través de un dashboard interactivo, alojado en el mismo servidor y accesible públicamente a través de la web.
 
-<img width="739" height="594" alt="image" src="https://github.com/user-attachments/assets/14611ed5-3cd3-4670-8bcd-50976d7179b6" />
-
+<img width="741" height="589" alt="image" src="https://github.com/user-attachments/assets/dd772aa1-586c-472a-8cae-71cb133d70f3" />
 
 
 ---
